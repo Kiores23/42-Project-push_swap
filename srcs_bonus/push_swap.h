@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:44 by amery             #+#    #+#             */
-/*   Updated: 2023/03/20 19:00:37 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/21 13:08:46 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,11 +37,13 @@ void	swap(t_tab ab, char *cmd);
 void	push(t_tab ab, char *cmd);
 void	rotate(t_tab ab, char *cmd);
 //PS_CREATE_TAB
+char	**create_ab(t_tab *ab, char **list, char **arg);
 int		*create_a(char **tab, int s);
 int		*create_b(int s);
 int		free_tab(t_tab ab);
 //PS_VERIF
 char	**ft_julien(t_tab *ab, char **arg);
+int		check_julien(char **arg, int size);
 int		ps_verif(char **a, int size);
 int		checkdouble(t_tab ab);
 int		free_julien(char **arg);

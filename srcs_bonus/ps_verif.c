@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:14 by amery             #+#    #+#             */
-/*   Updated: 2023/03/20 19:28:42 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/21 13:20:57 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,19 @@ int	checkdouble(t_tab ab)
 			if (ab.a[i] == ab.a[j])
 				return (0);
 		}
+	}
+	return (1);
+}
+
+int	check_julien(char **arg, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size && arg[i])
+	{
+		if (ft_strchr(arg[i], ' '))
+			return (0);
 	}
 	return (1);
 }
