@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:41 by amery             #+#    #+#             */
-/*   Updated: 2023/03/24 13:28:03 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 16:58:09 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,20 @@ int	freexit(int argc, char *argv[], t_tab ab, char **arg)
 	return (0);
 }
 
+void	init_ab(t_tab *ab, int argc)
+{
+	ab->sa = argc - 1;
+	ab->sb = 0;
+	ab->a = NULL;
+	ab->b = NULL;
+}
+
 int	main(int argc, char *argv[])
 {
 	char	**arg;
 	t_tab	ab;
 
-	ab.sa = argc - 1;
-	ab.sb = 0;
+	init_ab(&ab, argc);
 	arg = argv + 1;
 	if (ab.sa == 0)
 		return (0);

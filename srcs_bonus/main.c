@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:41 by amery             #+#    #+#             */
-/*   Updated: 2023/03/24 13:14:31 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 16:55:41 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,18 @@
 
 int	freexit(int argc, char *argv[], t_tab ab, char **arg)
 {
-	ab.sa = *ab.psa;
-	ab.sb = *ab.psb;
 	if (argc <= 1 && ab.sa > argc - 1 && ft_strchr(argv[1], ' ') && arg)
 		free_julien(arg);
 	free_tab(ab);
 	return (0);
+}
+
+void	init_ab(t_tab *ab, int argc)
+{
+	ab->sa = argc - 1;
+	ab->sb = 0;
+	ab->a = NULL;
+	ab->b = NULL;
 }
 
 int	main(int argc, char *argv[])
@@ -29,9 +35,8 @@ int	main(int argc, char *argv[])
 	char	**list;
 	char	**arg;
 
+	init_ab(&ab, argc);
 	list = NULL;
-	ab.sa = argc - 1;
-	ab.sb = 0;
 	arg = argv + 1;
 	if (!ab.sa)
 		return (0);
