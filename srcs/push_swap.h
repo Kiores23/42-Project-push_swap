@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:44 by amery             #+#    #+#             */
-/*   Updated: 2023/03/21 11:25:09 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 13:18:38 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,8 +77,9 @@ int		get_biggest_in_range(int *tab, int size, int range);
 int		is_three_sort(t_tab ab);
 //PS_VERIF
 char	**ft_julien(t_tab *ab, char **arg);
+int		check_julien(char **arg, int size);
 int		free_julien(char **arg);
 int		ps_verif(char **a, int size);
-int		checkdouble(t_tab ab, t_g g);
+int		checkdouble(t_tab ab);
 
 #endif

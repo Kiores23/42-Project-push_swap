@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:29 by amery             #+#    #+#             */
-/*   Updated: 2023/03/20 18:46:24 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 13:21:08 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,7 @@ void	sort(t_tab ab)
 	t_g		g;
 
 	create_group(ab.a, ab.sa, &g);
-	if (!checkdouble(ab, g))
-		ft_rerror();
-	else if (ab.sa > 5)
+	if (ab.sa > 5)
 	{
 		atob(ab, g);
 		sort_a(ab, g);

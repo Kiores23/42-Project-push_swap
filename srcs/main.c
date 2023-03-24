@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:41 by amery             #+#    #+#             */
-/*   Updated: 2023/03/21 11:45:33 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 13:28:03 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ int	main(int argc, char *argv[])
 		return (0);
 	else if (ab.sa == 1 && ft_strchr(arg[0], ' '))
 		arg = ft_julien(&ab, arg);
-	else if (ab.sa > 1 && ft_strchr(arg[0], ' '))
+	else if (ab.sa > 1 && !check_julien(arg, ab.sa))
 		return (ft_rerror());
 	if (!ps_verif(arg, ab.sa))
 		return (freexit(argc, argv, ab, arg) + ft_rerror());
@@ -43,7 +43,7 @@ int	main(int argc, char *argv[])
 	ab.b = create_b(ab.sa);
 	ab.sa = *ab.psa;
 	ab.sb = *ab.psb;
-	if (!ab.a || !ab.b)
+	if (!ab.a || !ab.b || !checkdouble(ab))
 		return (freexit(argc, argv, ab, arg) + ft_rerror());
 	if (!ft_issorta(ab.a, ab.sa, 0))
 		sort(ab);

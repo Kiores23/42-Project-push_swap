@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:14 by amery             #+#    #+#             */
-/*   Updated: 2023/03/21 11:24:49 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 13:28:08 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,33 @@ int	ps_verif(char **a, int size)
 	return (1);
 }
 
-int	checkdouble(t_tab ab, t_g g)
+int	checkdouble(t_tab ab)
 {
-	g.i = -1;
-	if (ab.a[0] == ab.a[1])
-		return (0);
-	while (++g.i < g.s1)
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < ab.sa)
 	{
-		g.j = -1;
-		while (++g.j + 1 < g.s2
-			|| (g.i + 1 == g.s1 && g.s2 * g.i + g.j + 1 < ab.sa))
+		j = i;
+		while (++j < ab.sa)
 		{
-			if (g.grp[g.i][g.j] == g.grp[g.i][g.j + 1])
+			if (ab.a[i] == ab.a[j])
 				return (0);
 		}
+	}
+	return (1);
+}
+
+int	check_julien(char **arg, int size)
+{
+	int	i;
+
+	i = -1;
+	while (++i < size && arg[i])
+	{
+		if (ft_strchr(arg[i], ' '))
+			return (0);
 	}
 	return (1);
 }

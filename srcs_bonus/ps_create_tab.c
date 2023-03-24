@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:19 by amery             #+#    #+#             */
-/*   Updated: 2023/03/21 13:19:52 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 13:31:59 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,7 @@ char	**create_ab(t_tab *ab, char **list, char **arg)
 	ab->b = create_b(ab->sa);
 	if (!ab->a || !ab->b || !checkdouble(*ab))
 		return (NULL);
-	if (!ft_issorta(ab->a, *ab->psa, 0))
-		list = checker(list);
+	list = checker(list);
 	if (!list && !ft_issorta(ab->a, *ab->psa, 0))
 		return (NULL);
 	sort(*ab, list);
