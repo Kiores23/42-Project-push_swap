@@ -6,7 +6,7 @@
 /*   By: amery <amery@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/27 15:42:44 by amery             #+#    #+#             */
-/*   Updated: 2023/03/24 13:18:38 by amery            ###   ########.fr       */
+/*   Updated: 2023/03/24 20:01:15 by amery            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,14 +28,6 @@ typedef struct s_tab
 	int	sc;
 	int	sd;
 }		t_tab;
-
-typedef struct s_fun
-{
-	void	(*swap)(t_tab, char*);
-	void	(*push)(t_tab, char*);
-	void	(*rotate)(t_tab, char*);
-	void	(*current)(t_tab, char*);
-}			t_fun;
 
 typedef struct s_g
 {
